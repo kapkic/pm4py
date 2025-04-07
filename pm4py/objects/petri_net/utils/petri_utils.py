@@ -157,7 +157,6 @@ def remove_place(net: PetriNet, place: PetriNet.Place) -> PetriNet:
         net.places.remove(place)
     return net
 
-
 def add_arc_from_to(fr, to, net: PetriNet, weight=1, type=None) -> PetriNet.Arc:
     """
     Adds an arc from a specific element to another element in some net. Assumes from and to are in the net!
@@ -320,6 +319,27 @@ def acyclic_net_variants(net, initial_marking, final_marking, activity_key=xes_u
         trace_variants.append(trace)
     return trace_variants
 
+def get_place_by_name(net: PetriNet, place_name) -> Optional[PetriNet.Place]:
+    """
+    Get a place by its name
+
+    Parameters
+    ------------
+    net
+        Petri net
+    place_name
+        Place name
+
+    Returns
+    ------------
+    place
+        Place object
+    """
+    for t in net.places:
+        if t.name == place_name:
+            return t
+    return None
+
 
 def get_transition_by_name(net: PetriNet, transition_name) -> Optional[PetriNet.Transition]:
     """
@@ -341,7 +361,6 @@ def get_transition_by_name(net: PetriNet, transition_name) -> Optional[PetriNet.
         if t.name == transition_name:
             return t
     return None
-
 
 def decorate_places_preset_trans(net: PetriNet):
     """
