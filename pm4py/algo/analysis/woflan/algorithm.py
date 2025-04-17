@@ -333,7 +333,7 @@ def step_1(woflan_object, return_asap_when_unsound=False):
                 return step_2(woflan_object, return_asap_when_unsound=return_asap_when_unsound)
     woflan_object.diagnostic_messages.append('The Petri Net is not a PM4Py Petri Net representation.')
     if woflan_object.print_diagnostics:
-        print('The Petri Net is not PM4Py Petri Net representation.')
+        print('The Petri Net is not a PM4Py Petri Net representation.')
     return False
 
 
