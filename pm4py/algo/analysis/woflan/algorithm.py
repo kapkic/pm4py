@@ -373,9 +373,9 @@ def step_2(woflan_object, return_asap_when_unsound=False):
     to_discover = woflan_object.get_s_c_net().places | woflan_object.get_s_c_net().transitions
     graph = transform_petri_net_into_regular_graph(to_discover)
     if not nx_utils.is_strongly_connected(graph):
-        woflan_object.diagnostic_messages.append('Petri Net is a not a worflow net.')
+        woflan_object.diagnostic_messages.append('Petri Net is a not a workflow net.')
         if woflan_object.print_diagnostics:
-            print('Petri Net is a not a worflow net.')
+            print('Petri Net is a not a workflow net.')
         return False
     else:
         woflan_object.diagnostic_messages.append('Petri Net is a workflow net.')
